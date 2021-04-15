@@ -127,14 +127,16 @@ public class JWTGenerator {
         String dialect = "http://org.wso2.carbon/wso2/caims";
 
         String subscriber = "setSubscriber";
-        String applicationName = "testApp";
+        String applicationName = "test_role_app_2,app2";
         String applicationId = "1253";
         String endUserName = "testGDK";
         String uuid = "dafa-fafa-fefw-gege-test";
 
         Map<String, String> claims = new LinkedHashMap<String, String>(20);
 
-        claims.put("iss", "API_GATEWAY_ID");
+        claims.put("iss", "IDP_JWT_ISSUER");
+        claims.put("sub","duminduk");
+        claims.put("aud", "wso2_keymanager");
         claims.put("exp", String.valueOf(expireIn));
         claims.put(dialect + "/subscriber", subscriber);
         claims.put(dialect + "/applicationid", applicationId);
